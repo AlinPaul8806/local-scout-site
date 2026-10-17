@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CampCard from '../components/CampCard.astro';
+---
+
+<Layout title="Temerari | Centrul Local Baden Powell">
+  <div class="space-y-12 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Clasele V-VIII
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">🏕️ Secțiunea Temerari</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">Explorarea activă a naturii, tehnici de supraviețuire și formarea spiritului de lider prin sistemul de patrulă.</p>
+    </div>
+
+    <div class="space-y-10 max-w-4xl mx-auto w-full">
+      <CampCard 
+        campId="temerari-info"
+        title="Aventura Autonomiei pe Poteci"
+        location="Activități în Natură"
+        date="Program Curent"
+        images={[
+          'temerari/teme1.jpg',
+          'temerari/teme2.jpg',
+          'temerari/teme3.jpg',
+          'temerari/teme4.jpg',
+        ]}
+        description="<p>
+            <p> &nbsp; Temerarii sunt exploratorii urbani și supraviețuitorii de weekend ai Cercetașilor României, adică gașca de foc formată din puști de 11-14 ani. </p>
+            
+            <p> &nbsp; Dacă lupișorii ascultau povești, temerarii își scriu propriile legende. Este vârsta la care rucsacul devine mai greu, dar pașii devin mult mai siguri, iar dorința de libertate 
+            explodează. </p>
+            
+            <p> &nbsp; Imaginează-ți un grup de tineri cu eșarfele fluturând în vânt, undeva pe creasta unui munte sau în mijlocul unei misiuni secrete printr-un oraș vechi. Nu-i sperie ploaia, 
+            nu-i oprește noroiul și cu siguranță nu au nevoie de Wi-Fi ca să fie conectați. Conexiunea lor adevărată se face seară de seară, în jurul focului de tabără, unde se nasc 
+            cele mai tari amintiri. </p>
+            
+            <p> &nbsp; Iată de ce viața de temerar este absolut legendară: </p>
+            
+            <p> &nbsp; &nbsp; • Sistemul de Patrule (Adevărata echipă): Temerarii nu acționează singuri. Ei sunt împărțiți în patrule – mici triburi cu nume de animale sau fenomene ale naturii. 
+            Fiecare are un rol: unul e liderul, altul e specialistul în noduri, altul e bucătarul de serviciu. Învață să conducă și să aibă încredere orbească în colegii lor. </p>
+            
+            <p> &nbsp; &nbsp; • Misiuni și Aventuri pe bune: De la competiții de orientare cu busola și harta (fără Google Maps!) până la construirea unor poduri din corzi și lemne (pionierat), 
+            temerarii testează limitele fizicii și ale propriei rezistențe. </p>
+           
+            <p> &nbsp; &nbsp; • Camparea Extremă: Să-ți ridici singur adăpostul, să gătești la primus sub cerul liber și să dormi în sacul de dormit în timp ce afară urlă vântul – asta înseamnă să 
+            fii temerar. Fiecare tabără este un test de supraviețuire trecut cu zâmbetul pe buze. </p>
+            
+            <p> &nbsp; &nbsp; • Proiecte cu Impact: Temerarii nu doar consumă aventură, ci o și creează. Ei încep să gândească campanii ecologice, acțiuni comunitare și proiecte cool prin care schimbă în bine 
+            cartierul sau comunitatea lor. </p>
+            
+            <p> &nbsp; Temerarii sunt definiția curajului brut îmbinat cu vibe-ul de gașcă. Sunt acei tineri care înlocuiesc ecranele telefoanelor cu stelele de pe cer și care descoperă că cea
+             mai mare superputere pe care o au este propria lor independență. Ei nu doar explorează lumea; ei o cuceresc în propriul lor stil, un pas de bocanc pe rând. </p>
+            </p>"
+        />
+    </div>
+
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

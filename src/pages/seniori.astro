@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CampCard from '../components/CampCard.astro';
+---
+
+<Layout title="Seniori | Centrul Local Baden Powell">
+  <div class="space-y-12 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Vârsta 19-24 ani
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">👣 Secțiunea Seniori</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">Maturitate, expediții majore la scară internațională, autocunoaștere profundă și tranziția spre viața adultă independentă.</p>
+    </div>
+
+    <div class="space-y-10 max-w-4xl mx-auto w-full">
+      <CampCard 
+        campId="seniori-info"
+        title="Tranziția și Mentoratul"
+        location="Expediții Majore"
+        date="Program Curent"
+        images={[
+          'seniori/seniori1.jpg',
+          'seniori/seniori2.jpg',
+          'seniori/seniori3.jpg',
+          'seniori/seniori4.jpg',
+          'seniori/seniori5.jpg',
+          'seniori/seniori6.jpg',
+          'seniori/seniori7.jpg',
+          'seniori/seniori8.jpg',
+        ]}
+        description="<p>
+        <p> &nbsp; Seniorii sunt ca forțele speciale ale cercetașilor, elita de 19-24 de ani care transformă aventura într-o disciplină de fier și un stil de viață aproape cazon. 
+        Aici vibe-ul se schimbă complet. Trecem de la distracția din liceu la o atitudine structurată, aproape militară prin rigoare, precizie și rezistență fizică. 
+        Când seniorii pleacă într-o misiune, nu există „nu se poate”. Ei sunt echipa pe care te bazezi când miza este maximă. </p>
+
+        <p> &nbsp; Dacă te uiți la pozele dintr-o expediție pe mare, înțelegi imediat despre ce e vorba. Nu e o croazieră de relaxare, ci o luptă calculată cu elementele naturii. 
+        Seniorii nu doar că navighează, ei stăpânesc ambarcațiunea cu o disciplină tactică: fiecare nod trebuie să țină la presiuni uriașe, fiecare schimb de tură se face la secundă, 
+        iar coordonarea în fața valurilor mari cere o încredere oarbă în echipă și un calm de gheață. </p>
+
+            <p> &nbsp; Iată de ce seniorii au cel mai militar și mai cool statut din toată mișcarea: </p>
+
+            <p> &nbsp; &nbsp; • Rigoare și Strategie Militară: Totul este planificat la nivel operațional. Managementul riscului, logistica de campanie, tehnicile avansate de prim-ajutor în condiții critice 
+            și capacitatea de a supraviețui cu echipament minim fac ca antrenamentele lor să semene cu cele ale trupelor de elită. </p>
+           
+            <p> &nbsp; &nbsp; • Marea și Sălbăticia ca Teren de Antrenament: O expediție pe mare înseamnă navigație pură, rezistență la izolare, gestionarea resurselor de apă și hrană și citirea vremii. 
+            Fie că înfruntă vântul pe o barcă cu vele, fie că mărșăluiesc zeci de kilometri pe teritorii necunoscute, seniorii își testează limitele psihologice. </p>
+            
+            <p> &nbsp; &nbsp; • Lideri de Impact și Serviciu Asumat: Senioratul nu este doar despre propria adrenalină. Ei sunt cei care intervin primii în comunitate când este nevoie de ajutor real 
+            (calamități, suport logistic masiv) și sunt pilonii de sprijin care ghidează generațiile mai mici. Serviciul lor este discret, eficient și extrem de puternic. </p>
+
+            <p> &nbsp; &nbsp; • Frăția de Sânge (Rover Crew): Legătura dintre ei este indestructibilă. Când ai împărțit aceeași rație de mâncare pe o furtună pe mare sau ai stat la veghe 
+            în miez de noapte pentru ca echipa ta să fie în siguranță, colegii de patrulă nu-ți mai sunt simpli prieteni. Devind camarazi pe viață. </p>
+            
+            <p> &nbsp; Seniorii sunt definiția competenței brute și a caracterului neclintit. Sunt cool pentru că nu au nevoie să demonstreze nimic nimănui; echipamentul lor tehnic, 
+            privirea concentrată și eșarfa purtată cu mândrie pe puntea unei bărci spun totul. Ei sunt dovada vie că disciplina nu îți taie libertatea, ci îți dă puterea să cucerești 
+            orice ocean. </p>
+
+        </p>"
+      />
+    </div>
+
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeaderCard from '../components/LeaderCard.astro';
+---
+
+<Layout title="Sponsori & Parteneri | Centrul Local Baden Powell">
+  <div class="space-y-12 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Cei Care Ne Susțin
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">🤝 Sponsori & Parteneri</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">Instituții, centre scout și companii alături de care construim viitorul tinerilor noștri.</p>
+    </div>
+
+    <div class="bg-stone-900/75 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl space-y-5 text-stone-100 max-w-4xl mx-auto w-full">
+      <p class="leading-relaxed text-sm sm:text-base mb-2">
+        Dezvoltarea tinerilor noștri este sprijinită prin colaborări solide și suport financiar logistic. Mulțumim tuturor entităților care cred în educația cercetășească.
+      </p>
+
+      <div class="space-y-5 text-xs font-medium text-stone-300">
+        <details class="group bg-stone-950/40 rounded-xl border border-white/5 overflow-hidden transition-all duration-300" open>
+          <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 list-none select-none">
+            <span class="text-amber-400 font-extrabold text-sm tracking-wide uppercase">🪙 Sponsori Companii & Finanțatori</span>
+            <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-stone-400 transition-transform duration-200 group-open:rotate-180">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="p-4 border-t border-white/5 space-y-3 bg-stone-950/10">
+            <p class="text-xs text-stone-300 mb-2 leading-relaxed">
+              Companii și persoane juridice care ne oferă sponsorizări directe sau sprijină materialele de tabără ale copiilor prin redirecționarea impozitului pe venit:
+            </p>
+
+            <LeaderCard
+              name="Devino Sponsorul Nostru Oficial"
+              role="Oportunitate de Parteneriat"
+              photoUrl="/scout-watermark.png"
+              description="<p> &nbsp; Fiecare mare aventură are nevoie de o bază solidă, iar companiile vizionare pot fi motorul din spatele viitoarei generații de lideri. Investind în Centrul Local Baden Powell, oferiți direct tinerilor resursele necesare pentru a se dezvolta: de la echipamente tehnice vitale (corturi rezistente, truse de prim ajutor, sisteme de orientare) și până la subvenționarea taberelor pentru copiii din medii vulnerabile.</p><p> &nbsp; Sponsorizarea cercetașilor nu este doar o faptă bună, ci o investiție strategică în comunitate prin Responsabilitate Socială (CSR). Compania dumneavoastră va fi asociată direct cu valori imuabile precum integritatea, curajul, spiritul de echipă și protecția mediului. Fie prin deductibilitatea fiscală legală de 20% din impozitul pe profit/venit, fie prin donații logistice de transport sau materiale, lăsăm împreună lumea un pic mai bună decât am găsit-o.</p><p> &nbsp; Pentru a stabili detaliile unui parteneriat și a descărca contractul de sponsorizare, accesați pagina noastră de <a href='/contact' class='text-amber-400 hover:text-white underline font-bold transition-colors'>Contact & Sponsorizări</a> sau trimiteți-ne un mesaj direct.</p><p><strong>Alăturați-vă călătoriei noastre!</strong></p>"
+            />
+          </div>
+        </details>
+
+        <details class="group bg-stone-950/40 rounded-xl border border-white/5 overflow-hidden transition-all duration-300">
+          <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 list-none select-none">
+            <span class="text-amber-400 font-extrabold text-sm tracking-wide uppercase">⚜️ Centre Scout & Organizații Partenere</span>
+            <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-stone-400 transition-transform duration-200 group-open:rotate-180">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="p-4 border-t border-white/5 space-y-3 bg-stone-950/10">
+            <p class="text-xs text-stone-300 mb-2 leading-relaxed">
+              Suntem parte dintr-o rețea globală. Colaborăm strâns cu structurile naționale și alte comunități de cercetași din București și din țară:
+            </p>
+
+            <LeaderCard
+              name="Organizația Națională „Cercetașii României”"
+              role="Corpul Național de Guvernanță"
+              photoUrl="/scout-watermark.png"
+              description="<p>Asociația mamă (ONCR) care recunoaște și validează oficial stagiile, programele educaționale, standardele de siguranță Safe From Harm și formarea continuă a liderilor prin sistemul Woodbadge.</p><p>Pentru a explora resursele la nivel de țară, proiectele globale în care suntem implicați sau structura federală internațională, vizitați platforma oficială direct pe <a href='https://scout.ro/' target='_blank' rel='noopener noreferrer' class='text-amber-400 hover:text-white underline font-bold transition-colors'>scout.ro</a>.</p>"
+            />
+          </div>
+        </details>
+
+        <details class="group bg-stone-950/40 rounded-xl border border-white/5 overflow-hidden transition-all duration-300">
+          <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 list-none select-none">
+            <span class="text-amber-400 font-extrabold text-sm tracking-wide uppercase">🏫 Instituții de Învățământ & Parteneri Locali</span>
+            <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-stone-400 transition-transform duration-200 group-open:rotate-180">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="p-4 border-t border-white/5 space-y-3 bg-stone-950/10">
+            <p class="text-xs text-stone-300 mb-2 leading-relaxed">
+              Școli, licee și inspectorate alături de care organizăm prezentări interactive, ateliere educaționale în Săptămâna Verde sau parteneriate educaționale locale:
+            </p>
+
+            <LeaderCard
+              name="Școli și Licee din București"
+              role="Parteneri Educaționali"
+              photoUrl="/scout-watermark.png"
+              description="Instituțiile școlare care ne găzduiesc periodic pentru prezentarea valorilor cercetășești sau cu care colaborăm strâns în desfășurarea atelierelor practice outdoor din cadrul programului național Săptămâna Verde."
+            />
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

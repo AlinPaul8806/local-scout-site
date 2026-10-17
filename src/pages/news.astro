@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news');
+const activeNews = Array.isArray(allNews)
+  ? allNews.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  : [];
+const hasNews = activeNews.length > 0;
+const noNews = !hasNews;
+---
+
+<Layout title="Știri & Tabere | Centrul Local Baden Powell">
+  <div class="space-y-8 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Cronica noastră activă
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">📢 Cronica Scout: Știri & Tabere</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">Urmărește aventurile, proiectele și jurnalele de campare ale cercetașilor noștri.</p>
+    </div>
+
+    {hasNews && (
+      <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto w-full">
+        {activeNews.map((post) => (
+          <div class="bg-stone-900/75 backdrop-blur-xl rounded-xl border border-white/10 shadow-2xl overflow-hidden flex flex-col justify-between p-6 transition-all duration-300 hover:bg-stone-900/85">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                {post.data.isCamp && (
+                  <span class="bg-amber-500 text-stone-950 text-[10px] font-bold px-2.5 py-0.5 rounded shadow-xs border border-amber-400/20 select-none">
+                    ⛺ TABĂRĂ
+                  </span>
+                )}
+                <span class="text-xs text-stone-400 font-medium font-mono">
+                  {post.data.date.toLocaleDateString('ro-RO')}
+                </span>
+              </div>
+              <h3 class="font-extrabold text-white text-lg mb-2 leading-snug tracking-tight">{post.data.title}</h3>
+              <p class="text-stone-200 text-sm leading-relaxed font-medium">{post.data.summary}</p>
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-white/10">
+              <a href={`/news/${post.id.replace(/\.md$/, '')}`} class="text-xs font-extrabold text-amber-400 hover:text-white inline-flex items-center gap-1 transition-colors uppercase tracking-wider">
+                Citește articolul complet →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+
+    {noNews && (
+      <div class="bg-stone-900/75 backdrop-blur-xl p-8 rounded-xl border border-white/10 text-center max-w-2xl mx-auto shadow-2xl">
+        <p class="text-stone-300 text-sm font-medium">Momentan nu au fost publicate articole noi. Reveniți curând!</p>
+      </div>
+    )}
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

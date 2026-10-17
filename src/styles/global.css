@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-scout-green: #1b4332;  /* Deep forest green for headers/nav */
+  --color-scout-gold: #f4a261;   /* Campfire amber/gold for highlights */
+  --color-scout-khaki: #f4f1de;  /* Light natural stone background */
+  --color-scout-navy: #264653;   /* Alternative darker accent color */
+}

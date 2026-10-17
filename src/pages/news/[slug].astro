@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const newsEntries = await getCollection('news');
+
+  return newsEntries.map((entry) => {
+    const slug = entry.id.replace(/\.md$/, '');
+
+    return {
+      params: { slug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout title={`${entry.data.title} | Centrul Local Baden Powell`}>
+  <article class="max-w-3xl mx-auto bg-white border border-stone-200 rounded-2xl p-6 md:p-8 shadow-xs my-4">
+    <div class="flex items-center gap-3 text-xs text-stone-500 mb-4 pb-4 border-b border-stone-100">
+      <a href="/news" class="font-bold text-[#124d37] hover:underline">← Înapoi la știri</a>
+      <span>•</span>
+      <time>{entry.data.date.toLocaleDateString('ro-RO')}</time>
+      {entry.data.isCamp && (
+        <span class="bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded border border-amber-200 text-[10px]">
+          ⛺ TABĂRĂ
+        </span>
+      )}
+    </div>
+
+    <h1 class="text-3xl md:text-4xl font-extrabold text-stone-900 tracking-tight leading-tight mb-4">
+      {entry.data.title}
+    </h1>
+
+    <p class="text-stone-600 italic text-base md:text-lg border-l-4 border-amber-500 pl-4 my-6 leading-relaxed bg-stone-50 py-2 rounded-r-lg">
+      {entry.data.summary}
+    </p>
+
+    <div class="prose prose-stone max-w-none mt-8 text-stone-800 leading-relaxed space-y-4
+      prose-headings:font-bold prose-headings:text-stone-900 prose-headings:mt-6 prose-headings:mb-2
+      prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg
+      prose-ul:list-disc prose-ul:pl-5 prose-ol:list-decimal prose-ol:pl-5
+      prose-strong:font-bold prose-strong:text-stone-900
+      prose-em:italic">
+      <Content />
+    </div>
+  </article>
+</Layout>

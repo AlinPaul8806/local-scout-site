@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CampCard from '../components/CampCard.astro';
+---
+
+<Layout title="Lupișori | Centrul Local Baden Powell">
+  <div class="space-y-12 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Clasele I-IV
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">🐾 Secțiunea Lupișori</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">Primii pași în marea aventură cercetășească, ghidați de poveștile nemuritoare din Cartea Junglei.</p>
+    </div>
+
+    <div class="space-y-10 max-w-4xl mx-auto w-full">
+      <CampCard
+        campId="lupisori-info"
+        title="Universul Micilor Lupi"
+        location="Activități de Unitate"
+        date="Program Curent"
+        images={[
+          'lupisori/lupisori1.jpg',
+          'lupisori/lupisori2.jpg',
+          'lupisori/lupisori3.jpg',
+          'lupisori/lupisori4.jpg',
+        ]}
+        description="<p>Lupișorii sunt inima curajoasă și curioasă a cercetașilor, reprezentând ramura de vârstă dedicată copiilor între 7 și 10 ani.</p><p>Inspirați de farmecul atemporal al Cărții Junglei de Rudyard Kipling, acești mici cercetași pășesc într-o lume a explorării, unde învață să crească liberi, dar mereu împreună.</p><p>Imaginează-ți o poiană luminată de razele blânde ale soarelui, răsunând de râsete curate și pași mărunți care aleargă prin iarbă. Aceasta este „Stânca Sfatului” lor, locul unde fiecare copil devine parte dintr-o mare familie – Marea Haită. Sub privirea blândă și ghidajul înțelept al liderilor (numiți cu afecțiune Akela, Baloo sau Bagheera), lupișorii nu doar că se joacă, ci descoperă lumea prin ochii prieteniei și ai respectului față de natură.</p><p>Activitatea lupișorilor este o împletire sensibilă între inocență și responsabilitate:</p><p>• Învățarea prin poveste: Fiecare joc ascunde o lecție despre curaj, generozitate și ajutor reciproc. În haită, nimeni nu este lăsat în urmă.</p><p>• Prietenia cu natura: Lupișorii învață să asculte foșnetul frunzelor, să recunoască urmele de animale și să protejeze fiecare fir de iarbă. Natura nu le este un simplu decor, ci o casă pe care o iubesc și o ocrotesc.</p><p>• Autodescoperirea: Prin noduri strânse cu mânuțele lor, corturi ridicate cu efort comun și primele campate sub cerul liber, copiii își înving temerile și își descoperă propria forță.</p><p>• Promisiunea și Legea: Atunci când un lupișor rostește promisiunea și își pune la gât eșarfa cercetășească, în ochii lui se aprinde o scânteie de mândrie curată. El promite să fie cel mai bun prieten posibil și să facă o faptă bună în fiecare zi.</p><p>Lupișorii nu doar că se joacă de-a aventura; ei învață arta de a fi oameni mari cu suflet curat. Ei sunt cei care aduc magia, energia brută și speranța în mișcarea cercetășească, amintindu-ne tuturor că cele mai mari lecții de viață se învață adesea în genunchi, studiind o muscă pe o frunză sau împărțind ultima bucată de ciocolată cu un prieten drag.</p>"
+      />
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

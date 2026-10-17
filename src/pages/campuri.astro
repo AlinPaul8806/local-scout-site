@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CampCard from '../components/CampCard.astro';
+---
+
+<Layout title="Tabere & Campuri Trecute | Centrul Local Baden Powell">
+  <div class="space-y-12 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Memoria Corturilor Noastre
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">🏕️ Cronica Taberelor Trecute</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">File de jurnal, amintiri și provocări depășite în mijlocul naturii de-a lungul anilor.</p>
+    </div>
+
+    <div class="space-y-10 max-w-4xl mx-auto w-full">
+      <CampCard
+        campId="rasnov2026"
+        title="Tabăra de alpinism Zărnesti"
+        location="Cabana Himalaya/Zărnesti"
+        date="August 2026"
+        images={[
+          'campuri/rasnov2026/rasnov1.jpg',
+          'campuri/rasnov2026/rasnov2.jpg',
+          'campuri/rasnov2026/rasnov3.jpg',
+          'campuri/rasnov2026/rasnov4.jpg',
+          'campuri/rasnov2026/rasnov5.jpg',
+          'campuri/rasnov2026/rasnov6.jpg',
+          'campuri/rasnov2026/rasnov7.jpg',
+          'campuri/rasnov2026/rasnov8.jpg',
+        ]}
+        description="<p>Această tabără de alpinism a transformat crestele Masivului Piatra Craiului și împrejurimile într-un teren deschis al cunoașterii, curajului și camaraderiei, aducând împreună Temerari, Exploratori și lideri dedicați sub spiritul cercetășesc. Atmosfera a fost una vibrantă, marcată de provocări depășite în echipă, învățare activă și seri petrecute la lumina stelelor.</p><p><strong>Ateliere Practice și Provocări pe Stâncă</strong></p><p>Programul a fost conceput special pentru a dezvolta autonomia și spiritul de echipă, fiind împărțit pe ateliere esențiale:<br>• Atelierul de Prim Ajutor: Sub îndrumarea liderilor, cercetașii au învățat tehnici vitale de salvare, simulând scenarii de urgență montană, bandajarea corectă și transportul în siguranță al unui rănit.<br>• Tehnica Nodurilor: Temerarii și exploratorii au stăpânit nodurile esențiale de siguranță (optul prin urmărire, semicabestanul, nodul ghid), înțelegând importanța fiecărei bucle când vine vorba de viața pe coardă.<br>• Escalada Propriilor Limite: În Zărnești (faimoasele Chei ale Zărneștiului), stânca verticală a devenit cel mai bun profesor. Echipați complet, cercetașii au simțit aderenta calcarului curat, depășindu-și temerile sub asigurarea atentă și încurajările neobosite ale liderilor.</p><p><strong>Baza de Operațiuni: Cabana Himalaya din Râșnov</strong></p><p>După traseele intense din Zărnești, Cabana Himalaya din Râșnov a oferit cadrul perfect pentru continuarea aventurii și relaxare. Facilitățile au transformat curtea cabanei într-un veritabil parc de aventură:<br>• Peretele de escaladă artificial: Ideal pentru sesiunile de încălzire sau pentru perfecționarea tehnicii de picioare înainte de a ieși pe stânca naturală.<br>• Tiroliana: O porție garantată de adrenalină care a traversat curtea, devenind rapid activitatea favorită a Temerarilor.<br>• Zona de camping: Un loc grozav, spațios și verde, unde corturile s-au aliniat perfect.</p>"
+      />
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

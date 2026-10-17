@@ -1,0 +1,390 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact & Sponsorizări | Centrul Local Baden Powell">
+  <div class="space-y-12 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Implică-te alături de noi
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">🤝 Contact & Susținere Financiară</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">Intră în legătură cu liderii noștri sau sprijină dezvoltarea tinerilor prin donații legale.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 items-start">
+      <div class="lg:col-span-2 bg-stone-900/75 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl space-y-6">
+        <h2 class="text-xl font-bold text-white flex items-center gap-2 drop-shadow-xs">✉️ Trimite-ne un mesaj</h2>
+
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/xljgjlwl"
+          method="POST"
+          class="space-y-4"
+        >
+          <input type="hidden" name="_next" value="http://localhost:4321/contact" />
+          <input
+            type="text"
+            name="website"
+            id="website"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;"
+          />
+
+          <div id="form-status" class="hidden rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs text-amber-200"></div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label class="text-xs font-bold text-stone-300 uppercase tracking-wide">Nume Complet</label>
+              <input
+                type="text"
+                name="name"
+                required
+                minlength="2"
+                maxlength="100"
+                pattern="^[A-Za-zĂăÂâÎîȘșȚțĂÂÎȘȚa-zA-Z .'-]{2,100}$"
+                placeholder="Ex: Andrei Popescu"
+                class="w-full border border-stone-700/60 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-amber-400 bg-stone-950/50 text-white placeholder-stone-500 transition-colors"
+              />
+            </div>
+            <div class="space-y-1">
+              <label class="text-xs font-bold text-stone-300 uppercase tracking-wide">Adresă Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                maxlength="254"
+                placeholder="Ex: andrei@email.com"
+                class="w-full border border-stone-700/60 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-amber-400 bg-stone-950/50 text-white placeholder-stone-500 transition-colors"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-bold text-stone-300 uppercase tracking-wide">Subiect interes</label>
+            <select
+              name="subject"
+              required
+              class="w-full border border-stone-700/60 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-amber-400 bg-stone-950/50 text-white transition-colors cursor-pointer"
+            >
+              <option value="">Alege un subiect</option>
+              <option value="Inscriere copil">Înscriere copil (Listă de așteptare)</option>
+              <option value="Lider Voluntar">Vreau să devin Lider Voluntar</option>
+              <option value="Sponsorizari">Sponsorizări / Parteneriate</option>
+              <option value="Intrebare generala">Întrebare generală</option>
+            </select>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-bold text-stone-300 uppercase tracking-wide">Mesajul tău</label>
+            <textarea
+              name="message"
+              rows="5"
+              required
+              minlength="20"
+              maxlength="2000"
+              placeholder="Scrie mesajul tău aici..."
+              class="w-full border border-stone-700/60 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-amber-400 bg-stone-950/50 text-white placeholder-stone-500 transition-colors"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="bg-[#124d37] hover:bg-[#1b6b4e] border border-emerald-500/20 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-lg shadow-md transition-all cursor-pointer hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100">
+            Trimite către Centrul Local
+          </button>
+        </form>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-stone-900/75 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl space-y-4">
+          <h2 class="text-lg font-bold text-amber-400 flex items-center gap-2">📞 Informații Contact</h2>
+          <p class="text-xs text-stone-200 leading-relaxed">Suntem bucuroși să răspundem întrebărilor tale. Ne poți contacta direct prin canalele oficiale de mai jos:</p>
+
+          <div class="space-y-3.5 pt-3 text-xs border-t border-white/10">
+            <div class="flex items-center gap-3 group">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 text-sm">
+                📱
+              </div>
+              <div>
+                <span class="text-stone-400 block uppercase font-mono tracking-wider text-[9px]">Telefon Centru</span>
+                <a href="tel:+40 765 119 343" class="font-bold text-stone-100 hover:text-amber-400 transition-colors text-sm font-mono">+40 765 119 343</a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 group">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0 text-sm">
+                📧
+              </div>
+              <div>
+                <span class="text-stone-400 block uppercase font-mono tracking-wider text-[9px]">Adresă Email</span>
+                <a href="mailto:bucuresti@cercetasii.ro" class="font-bold text-stone-100 hover:text-amber-400 transition-colors text-sm font-mono break-all">cl_badenpowell@yahoo.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-stone-900/75 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl space-y-4">
+          <h2 class="text-lg font-bold text-amber-400 flex items-center gap-2">🪙 Date Fiscale Transfer</h2>
+          <p class="text-xs text-stone-200 leading-relaxed">Fiecare donație sau sponsorizare directă ne ajută să achiziționăm corturi, truse de prim ajutor și materiale logistice pentru activități.</p>
+
+          <div class="space-y-3 pt-2 text-xs border-t border-white/10">
+            <div>
+              <span class="text-stone-400 block uppercase font-mono tracking-wider text-[10px]">Entitate Oficială</span>
+              <span class="font-semibold text-stone-100">Organizația Națională "Cercetașii României" - Centrul Local Baden Powell</span>
+            </div>
+            <div>
+              <span class="text-stone-400 block uppercase font-mono tracking-wider text-[10px]">Cod Fiscal (CUI)</span>
+              <span class="font-mono font-semibold text-stone-100">54686537</span>
+            </div>
+            <div>
+              <span class="text-stone-400 block uppercase font-mono tracking-wider text-[10px]">Cont Bancar (IBAN)</span>
+
+              <button
+                id="copy-iban-btn"
+                class="w-full flex items-center justify-between bg-stone-950/60 p-3 rounded mt-1 font-mono text-amber-300 border border-stone-800 hover:border-amber-400/50 hover:bg-stone-950 text-left transition-all group relative cursor-pointer"
+                title="Apasă pentru a copia codul IBAN"
+              >
+                <span id="iban-text" class="text-[11px] font-bold tracking-tight">RO47BTRLRONCRT0DG0045601</span>
+                <span id="copy-status-badge" class="bg-stone-900 text-stone-300 rounded px-2 py-1 text-[9px] font-bold uppercase tracking-wider">Copiază</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-stone-900/75 backdrop-blur-xl border border-amber-500/20 rounded-2xl p-6 shadow-2xl space-y-3">
+          <h3 class="font-bold text-amber-400 text-base flex items-center gap-1.5">📝 Redirecționează 3.5%</h3>
+          <p class="text-stone-200 text-xs leading-relaxed">
+            Dacă ești salariat, poți direcționa gratuit 3.5% din impozitul pe venit completând Formularul 230 în beneficiul centrului nostru local, sprijinind materialele de tabără ale copiilor.
+          </p>
+          <a href="#" onclick="alert('Descărcare formular precompletat 230...'); return false;" class="inline-block text-[10px] font-bold text-amber-900 border border-amber-900/20 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all shadow-sm">
+            Descarcă Formularul 230 PDF ↓
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>
+
+<script>
+  const copyBtn = document.getElementById('copy-iban-btn');
+  const ibanTextEl = document.getElementById('iban-text');
+  const statusBadge = document.getElementById('copy-status-badge');
+
+  if (copyBtn && ibanTextEl && statusBadge) {
+    copyBtn.addEventListener('click', async () => {
+      const rawIban = ibanTextEl.textContent || '';
+
+      try {
+        await navigator.clipboard.writeText(rawIban);
+
+        statusBadge.textContent = 'COPIAT! ✓';
+        statusBadge.classList.remove('bg-stone-900', 'text-stone-300');
+        statusBadge.classList.add('bg-emerald-600', 'text-white');
+        copyBtn.classList.add('border-emerald-500');
+
+        setTimeout(() => {
+          statusBadge.textContent = 'COPIAZĂ';
+          statusBadge.classList.remove('bg-emerald-600', 'text-white');
+          statusBadge.classList.add('bg-stone-900', 'text-stone-300');
+          copyBtn.classList.remove('border-emerald-500');
+        }, 2000);
+      } catch (err) {
+        console.error('Eroare la copierea textului: ', err);
+      }
+    });
+  }
+</script>10px] bg-stone-900 text-stone-300 px-2 py-0.5 rounded font-sans font-bold group-hover:text-white transition-colors">                  COPIAZĂ
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-stone-900/75 backdrop-blur-xl border border-amber-500/20 rounded-2xl p-6 shadow-2xl space-y-3">
+          <h3 class="font-bold text-amber-400 text-base flex items-center gap-1.5">📝 Redirecționează 3.5%</h3>
+          <p class="text-stone-200 text-xs leading-relaxed">
+            Dacă ești salariat, poți direcționa gratuit 3.5% din impozitul pe venit completând Formularul 230 în beneficiul centrului nostru local, sprijinind materialele de tabără ale copiilor.
+          </p>
+          <a href="#" onclick="alert('Descărcare formular precompletat 230...'); return false;" class="inline-block text-[10px] font-bold text-amber-900 border border-amber-900/20 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all shadow-sm">
+            Descarcă Formularul 230 PDF ↓
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>
+
+<script>
+  const copyBtn = document.getElementById('copy-iban-btn');
+  const ibanTextEl = document.getElementById('iban-text');
+  const statusBadge = document.getElementById('copy-status-badge');
+  const form = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  const honeypot = document.getElementById('website');
+  const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+  function setFormStatus(message, isError = false) {
+    if (!formStatus) return;
+
+    formStatus.textContent = message;
+    formStatus.classList.toggle('hidden', !message);
+    formStatus.classList.toggle('border-amber-500/30', !isError);
+    formStatus.classList.toggle('bg-amber-500/10', !isError);
+    formStatus.classList.toggle('text-amber-200', !isError);
+    formStatus.classList.toggle('border-red-500/30', isError);
+    formStatus.classList.toggle('bg-red-500/10', isError);
+    formStatus.classList.toggle('text-red-200', isError);
+  }
+
+  if (form && submitBtn) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const name = (form.querySelector('input[name="name"]') || {}).value || '';
+      const email = (form.querySelector('input[name="email"]') || {}).value || '';
+      const subject = (form.querySelector('select[name="subject"]') || {}).value || '';
+      const message = (form.querySelector('textarea[name="message"]') || {}).value || '';
+
+      if (honeypot && honeypot.value.trim()) {
+        setFormStatus('Mesajul a fost respins ca spam.', true);
+        return;
+      }
+
+      if (name.trim().length < 2) {
+        setFormStatus('Te rugăm să introduci un nume valid.', true);
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+        setFormStatus('Te rugăm să introduci o adresă de e-mail validă.', true);
+        return;
+      }
+
+      if (!subject.trim()) {
+        setFormStatus('Te rugăm să alegi un subiect.', true);
+        return;
+      }
+
+      if (message.trim().length < 20) {
+        setFormStatus('Mesajul trebuie să aibă cel puțin 20 de caractere.', true);
+        return;
+      }
+
+      const cooldownKey = 'contact-form-cooldown';
+      const cooldownMs = 5000;
+      const lastSubmittedAt = Number(localStorage.getItem(cooldownKey) || '0');
+      const now = Date.now();
+
+      if (lastSubmittedAt && now - lastSubmittedAt < cooldownMs) {
+        const remainingSeconds = Math.ceil((cooldownMs - (now - lastSubmittedAt)) / 1000);
+        setFormStatus(`Te rugăm să aștepți ${remainingSeconds}s înainte de a trimite din nou.`, true);
+        return;
+      }
+
+      localStorage.setItem(cooldownKey, String(now));
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Se trimite...';
+      setFormStatus('Se trimite mesajul...', false);
+      form.submit();
+    });
+  }
+
+  if (copyBtn && ibanTextEl && statusBadge) {
+    copyBtn.addEventListener('click', async () => {
+      const rawIban = ibanTextEl.textContent || '';
+
+      try {
+        await navigator.clipboard.writeText(rawIban);
+
+        statusBadge.textContent = 'COPIAT! ✓';
+        statusBadge.classList.remove('bg-stone-900', 'text-stone-300');
+        statusBadge.classList.add('bg-emerald-600', 'text-white');
+        copyBtn.classList.add('border-emerald-500');
+
+        setTimeout(() => {
+          statusBadge.textContent = 'COPIAZĂ';
+          statusBadge.classList.remove('bg-emerald-600', 'text-white');
+          statusBadge.classList.add('bg-stone-900', 'text-stone-300');
+          copyBtn.classList.remove('border-emerald-500');
+        }, 2000);
+
+      } catch (err) {
+        console.error('Eroare la copierea textului: ', err);
+      }
+    });
+  }
+</script>

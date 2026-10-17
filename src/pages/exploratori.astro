@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CampCard from '../components/CampCard.astro';
+---
+
+<Layout title="Exploratori | Centrul Local Baden Powell">
+  <div class="space-y-12 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Clasele IX-XII
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">🏰 Secțiunea Exploratori</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">Liceenii își asumă un rol activ în societate, inițiind proiecte comunitare complexe și explorându-și potențialul civic.</p>
+    </div>
+
+    <div class="space-y-10 max-w-4xl mx-auto w-full">
+      <CampCard 
+        campId="exploratori-info"
+        title="Implicare și Impact Social"
+        location="Proiecte Comunitare"
+        date="Program Curent"
+        images={[
+          'explo/explo1.jpg',
+          'explo/explo2.jpg',
+          'explo/explo3.jpg',
+          'explo/explo4.jpg'
+        ]}
+        description="<p>
+        
+        <p> &nbsp; Exploratorii sunt mințile ascuțite și rebelii cu cauză ai Cercetașilor României, ramura de elită formată din liceeni între 15 și 18 ani. Uită de jocurile din curtea școlii și de 
+        regulile stricte. La vârsta asta, exploratorii nu mai primesc activități de-a gata – ei își creează propriile proiecte, își testează limitele și pun lumea în mișcare. Sunt acei 
+        tineri care nu așteaptă să se schimbe ceva, ci devin ei schimbarea. </p>
+        
+        <p> &nbsp; Imaginează-ți un grup de prieteni care își fac rucsacii mari nu pentru o simplă plimbare, ci pentru un hike de câteva zile pe crestele Făgărașului, o expediție internațională sau 
+        coordonarea unui festival pentru comunitate. Au acel aer de independență combinat cu o maturitate asumată: știu să folosească o daltă, să scrie un proiect de finanțare, să facă un 
+        nod de salvare la 20 de metri înălțime și să poarte o discuție profundă despre viitor, totul în aceeași zi. </p>
+
+        <p> &nbsp;  Iată ce face ca viața de explorator să fie la un cu totul alt nivel: </p>
+
+        <p> &nbsp; &nbsp; • Expedițiile pe bune: Nu mai vorbim de campat în spatele cabanei. Exploratorii organizează expediții autonome de tip survival. Își planifică trasee montane de zeci de kilometri, 
+        își gestionează resursele la milimetru și învață să fie complet independenți în mijlocul sălbăticiei.  </p>
+
+        <p> &nbsp; &nbsp;  • Proiecte cu impact real (Enterprise): Acești tineri identifică probleme reale din comunitate și le rezolvă. Fie că organizează festivaluri de artă urbană, campanii uriașe de 
+        ecologizare, fie că reabilitează trasee turistice abandonate sau creează centre de tineret, exploratorii funcționează ca un adevărat ONG administrat de adolescenți. </p>
+
+        <p> &nbsp; &nbsp; • Vibe-ul internațional: La vârsta asta, granițele dispar. Exploratorii pleacă la Jamboree-uri internaționale, participă la schimburi de experiență în toată Europa și își fac 
+        prieteni de pe toate continentele. Învață ce înseamnă cetățenia globală direct de la sursă. </p>
+
+        <p> &nbsp; &nbsp; • Hike-ul de introspecție: Dincolo de adrenalină, explorarea înseamnă și descoperire de sine. Nopțile lungi în jurul focului, sub un cer plin de stele, devin spațiul perfect 
+        pentru discuții filozofice, planuri de viitor și legarea unor prietenii care trec testul timpului și al distanței. </p>
+        
+        <p> &nbsp; Exploratorii sunt generația de lideri, inovatori și activiști care știu că eșarfa de la gât vine cu o responsabilitate uriașă: aceea de a lăsa lumea un pic mai bună 
+        decât au găsit-o. Sunt cool tocmai pentru că au curajul să fie autentici, să își asume riscuri și să demonstreze că adolescența nu este doar o perioadă de tranziție, ci forța brută 
+        care mișcă societatea înainte.
+        </p>"
+      />
+    </div>
+
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

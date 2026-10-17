@@ -1,0 +1,320 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeaderCard from '../components/LeaderCard.astro';
+---
+
+<Layout title="Echipa Noastră | Centrul Local Baden Powell">
+  <div class="space-y-12 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Liderii și Voluntarii Noștri
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">⚜️ Echipa Baden Powell</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">Oamenii dedicați care ghidează pașii tinerilor cercetași în toate ramurile de vârstă.</p>
+    </div>
+
+    <div class="bg-stone-900/75 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl space-y-5 text-stone-100">
+      <p class="leading-relaxed text-sm sm:text-base mb-2">
+        Centrul nostru local este condus de o echipă inimoasă de lideri voluntari certificați. Aceștia își oferă timpul și energia pentru a crea activități sigure, educative și pline de aventură.
+      </p>
+      
+      <div class="space-y-5 text-xs font-medium text-stone-300">
+        <details class="group bg-stone-950/40 rounded-xl border border-white/5 overflow-hidden transition-all duration-300" open>
+          <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 list-none select-none">
+            <span class="text-amber-400 font-extrabold text-sm tracking-wide uppercase">👨‍💼 Șef Centru Local</span>
+            <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-stone-400 transition-transform duration-200 group-open:rotate-180">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="p-4 border-t border-white/5 space-y-4 bg-stone-950/10">
+            <p class="text-xs text-stone-300 mb-2 leading-relaxed">
+              Coordonează activitatea globală, managementul resurselor și strategia pe termen lung pentru dezvoltarea comunității noastre cercetășești.
+            </p>
+            
+            <LeaderCard 
+              name="Alexandru Vechiu" 
+              role="Șef Centru Local" 
+              photoUrl="/leaders/alex-vechiu.jpeg" 
+              description="&nbsp; Sunt omul care coordonează activitatea Centrului Local Baden-Powell, dar dincolo de tabele, strategii și logistica din spatele cortinei, sunt un cercetaș 
+              convins care își ia energia din natură și mișcare. Când nu organizez campuri sau nu plănuiesc următoarea activitate pentru tineri, cel mai probabil mă găsești 
+              pe două roți, pe trasee de MTB, sau undeva sus, la escaladă și alpinism. Rolul meu în centru este să am grijă ca „motorul” comunității noastre să meargă ceas, dar și să 
+              le insuflu celor tineri curajul, reziliența și respectul pentru munte. Îmi dedic timpul liber pentru a-i ghida pe ceilalți spre noi orizonturi – mereu cu eșarfa la gât, 
+              casca pregătită și gata pentru următoarea aventură!"
+"
+            />
+          </div>
+        </details>
+
+        <details class="group bg-stone-950/40 rounded-xl border border-white/5 overflow-hidden transition-all duration-300" open>
+          <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 list-none select-none">
+            <span class="text-amber-400 font-extrabold text-sm tracking-wide uppercase">⚜️ Lideri de Ramură</span>
+            <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-stone-400 transition-transform duration-200 group-open:rotate-180">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </summary>
+          
+          <div class="p-4 border-t border-white/5 space-y-6 bg-stone-950/10">
+            
+            <div class="space-y-2">
+              <h3 class="text-white text-xs font-bold uppercase tracking-wider pl-1 border-l-2 border-amber-500">🐾 Lupișori (Clasele I-IV)</h3>
+              <div class="space-y-2 pt-1">
+                <LeaderCard 
+                  name="George Calin" 
+                  scoutName="Doc"
+                  role="Lider Unitate Lupisori" 
+                  photoUrl="/leaders/george-calin.jpeg" 
+                  description="<p> &nbsp; Faceți cunoștință cu George, alias „Doc” – medicul nostru cu superputeri de cercetaș! 🩺⛺ Atunci când nu este in cabinet ajutând 
+                  oamenii să își recupereze mobilitatea, Doc este pe teren, ghidându-i pe Lupișori și Temerari. Ca lider voluntar, George folosește aceeași dedicare, empatie 
+                  și veselie pentru a-i ajuta pe cercetași să își „antreneze” stima de sine, să își construiască o încredere de nezdruncinat și să își șlefuiască comportamentul. </p>
+
+                  <p> &nbsp; Este tipul de lider activ care nu stă niciodată pe margine: râde cu copiii, îi susține când le e greu și le arată că nicio barieră nu este de netrecut atunci 
+                  când ai echipa potrivită alături..</p> "
+                />
+
+                <LeaderCard 
+                  name="Dr. Irina Azhari" 
+                  scoutName="Dr. Azhari"
+                  role="Lider Unitate Lupisori" 
+                  photoUrl="/leaders/irina-azhari.jpeg" 
+                  description="<p> &nbsp; Medicină, educație și cercetășie – pentru oameni și caractere puternice </p>
+
+                  <p> &nbsp; Medicina m-a învățat să vindec oameni. Cercetășia m-a învățat să-i ajut să crească. </p>
+
+                  <p> &nbsp; Sunt medic specialist în chirurgie dento-alveolară, cu peste 20 de ani de experiență, master în Urgențe Medico-Chirurgicale și formare în domeniul formării 
+                  adulților și al animației socio-educative. În cadrul Centrului Local Baden-Powell, coordonez o comunitate de peste 75 de cercetași și organizez campuri, drumeții, 
+                  ateliere și evenimente care îi ajută pe copii să devină mai independenți, curajoși și responsabili. </p>
+
+                  <p> &nbsp; Îmbin experiența medicală cu educația pentru sănătate, atelierele de prim ajutor și educația nonformală, susținută de formări Woodbadge și stagii de 
+                  pedagogie și animație scout. Sunt și mamă, iar acest rol îmi amintește zilnic cât de importante sunt răbdarea, empatia și bucuria lucrurilor simple. </p>
+
+                  <p> &nbsp; Cred că educația nu înseamnă doar ceea ce știu copiii, ci mai ales oamenii care devin. Prin cercetășie, îi însoțim în descoperirea propriilor forțe, a naturii 
+                  și a valorii de a crește împreună. ⚜️ </p> "
+                />
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="text-white text-xs font-bold uppercase tracking-wider pl-1 border-l-2 border-emerald-500">🏕️ Temerari (Clasele V-VIII)</h3>
+              <div class="space-y-2 pt-1">
+                <LeaderCard 
+                  name="Diana Joita" 
+                  scoutName="Diana Joy"
+                  role="Lider Unitate Temerari" 
+                  photoUrl="/leaders/diana-joita.jpeg" 
+                  description="<p> &nbsp; „Cercetășia nu este doar un hobby, ci un mod de a trăi și de a lăsa lumea un pic mai bună decât am găsit-o.” </p>
+                  
+                  <p> &nbsp; Povestea mea în Organizația Națională Cercetașii României a început încă din anii de liceu, o perioadă în care am descoperit puterea valorilor cercetășești, 
+                  prietenia adevărată și bucuria de a fi în mijlocul naturii. 
+                  Astăzi, după peste 10 ani de activitate ca lider, cercetășia rămâne o parte fundamentală din identitatea mea — o pasiune pe care o trăiesc zi de zi și pe care 
+                  o împart cu drag și acasă, fiind mama a trei copii, toți cercetași la rândul lor, de-a lungul anilor.</p>
+                  
+                  <p> &nbsp; În Centrul Local am parcurs toate etapele: am lucrat direct cu copiii și tinerii de la toate ramurile de vârstă, am făcut parte din Consiliul CL și am îndeplinit 
+                  rolul de Șef de Centru. În prezent, îmi dedic energia mentoratului pentru dezvoltarea ramurilor de Lupișori și Temerari, sprijinind liderii să ofere programe de 
+                  calitate noilor generații. De asemenea, am avut un rol activ în pregătirea tinerilor pentru competiții, cum a fost pregătirea pentru Cupa Izvoarelor, 
+                  unde efortul lor s-a concretizat în rezultate remarcabile pentru centrul nostru (2017, 2018, 2019, 2026).</p>
+                  
+                  <p> &nbsp; Cred mult în formarea continuă: sunt absolventă a primei serii pilot Woodbadge (2019–2020) și a stagiilor obligatorii din ONCR. Astăzi, dau mai departe din experiența 
+                  mea ca mentor pentru alți lideri în programele Woodbadge și ca membru în Echipa Națională de Voluntari ONCR. Totodată, mi-am asumat și roluri precum Coordonator 
+                  MOVIS local și Responsabil local Safe from Harm (SFH), asigurând un mediu sigur și stimulativ pentru toți membrii noștri.</p>
+                  
+                  <p> &nbsp; Pasiunea pentru educație prin acțiune s-a tradus și în proiecte de suflet inițiate pentru comunitate și Centrul Local, precum valorificarea traseului 
+                  „Drumul Tunului” / Vf. Clăbucetul Taurului (2018) sau prima ediție a campurilor de la Babadag (2018) și Letea (2024).</p>
+                  
+                  <p> &nbsp; În 2025, am avut bucuria de a coordona la nivel național programul „Lumina Păcii”, care a inclus lansarea programului educațional.</p>"
+                />
+                
+                <LeaderCard 
+                  name="Ionut Moldovan" 
+                  role="Lider Unitate Temerari" 
+                  photoUrl="/leaders/ionut-moldovan.jpeg" 
+                  description="<p> &nbsp; Sunt un om al contrastelor salvatoare: în fiecare zi sting focuri care distrug, iar în timpul liber aprind scânteia curajului în inimile 
+                  noilor generații.</p>
+                  
+                  <p> &nbsp; Călătoria mea în cercetășie a început în anii '90, o epocă a începuturilor timide, în care resursele se numărau pe degete, dar entuziasmul era nemărginit.
+                   Am învățat să ridicăm tabere din aproape nimic, să legăm noduri cu corzi uzate și să navigăm pe munte ghidați doar de busolă și de o încredere oarbă unii în 
+                   ceilalți. Acele vremuri aspre, dar profund autentice, mi-au oferit cea mai importantă lecție: că adevărata bogăție a unui cercetaș nu stă în echipamentul de ultimă 
+                   generație, ci în tăria caracterului său.</p>
+                   
+                   <p> &nbsp; În viața de zi cu zi port uniforma de pompier. Această profesie m-a învățat ce înseamnă datoria dusă până la capăt, calmul în mijlocul furtunii și 
+                   valoarea inestimabilă a unei secunde. Însă, dacă la serviciu intervin atunci când criza a apărut deja, în cercetășie am descoperit puterea prevenției.</p>
+                   
+                   <p> &nbsp; Aici, printre copii și tineri, investesc tot timpul meu liber pentru a clădi o lume mai sigură, formând caractere puternice, oameni responsabili și 
+                   camarazi pe care te poți baza la greu.</p><p>Pentru mine, cercetășia nu este un hobby de weekend, ci un mod de a respira și de a da înapoi comunității. 
+                   După mai bine de trei decenii pe poteci, privesc cu mândrie spre trecut și cu speranță spre viitor, convins că cea mai frumoasă tabără este întotdeauna cea care 
+                   urmează să vină.</p>"
+                />
+
+                <LeaderCard 
+                  name="Alin-Paul Popa" 
+                  role="Lider Unitate Temerari" 
+                  photoUrl="/leaders/alin-popa.jpg" 
+                  description="<p> &nbsp; Între tehnologie, trecut și trasee montane – așa se definește universul meu. La bază sunt programator și istoric, o combinație rară care îmi 
+                  permite să conectez viitorul digital cu lecțiile trecutului. Practic, pot să analizez prăbușirea Imperiului Roman în timp ce aștept să se compileze codul, și, 
+                  cel mai important, știu exact de ce „restartul” funcționează încă din Antichitate.</p>
+                  
+                  <p> &nbsp; Însă adevărata mea energie nu vine dintr-o priză sau din arhive prăfuite, ci din mișcare și natură. Atunci când ecranul devine prea strâmt, îmi iau 
+                  MTB-ul și plec să testez gravitația pe poteci abrupte de munte. Pentru mine, fericirea înseamnă un traseu tehnic prin pădure, briza mării la orizont sau o carte 
+                  bună ascunsă în rucsac. </p>
+                   
+                   <p> &nbsp; Cred cu tărie în spiritul liber al cercetășiei și în regula de aur: fii pregătit. În cazul meu, asta înseamnă că sunt la fel de gata să salvez un 
+                   server picat la miezul nopții, să explic tactici medievale în jurul focului de tabără sau să repar un lanț de bicicletă în mijlocul pustietății. </p>
+                   
+                   <p> &nbsp; A fi cercetaș înseamnă să explorezi constant, să înveți din fiecare căzătură (atât de pe bicicletă, cât și din viață) 
+                   și să fii mereu gata pentru o nouă aventură alături de echipă.</p>"
+                />
+
+                <LeaderCard 
+                  name="Ioana Popescu" 
+                  role="Lider Unitate Temerari" 
+                  photoUrl="/leaders/ioana-popescu.jpeg" 
+                  description="<p> &nbsp; Arh. Ioana Popescu | mamă </p>
+                  
+                  <p> &nbsp; Cred în libertatea de gândire și de exprimare a copiilor care, bine ghidați, au șansa să ajungă conectați cu ei înșiși și cu tot ceea ce îi înconjoară.
+                  Sunt în cercetășie din anul 2024, iar de-a lungul timpului m-am implicat în activități pe toate ariile de dezvoltare. </p>
+                   
+                   <p> &nbsp; Îmi place să le cultiv copiilor entuziasmul, curiozitatea, creativitatea și inteligența emoțională, 
+                  astfel încât să plece pe drumul vieții cât mai bine echipați. </p>"
+                />
+
+                <LeaderCard 
+                  name="Alexandru Mihalcea" 
+                  role="Lider Unitate Temerari" 
+                  photoUrl="/leaders/alex-mihalcea.jpeg" 
+                  description="<p> &nbsp; Alexandru Mihalcea - scouter </p>
+                  
+                  <p> &nbsp; Tata a 2 fete cercetase. </p>
+                   
+                   <p> &nbsp; Ocupatia principala  inginer proiectant CFDP.
+                    Alte activitati: secundare arbitru si instructor de sah. 
+                    Alte Hobby-uri:  Cuvinte incrucisate (Rebus, nu integrame), fotbal. </p>"
+                />
+
+                <LeaderCard 
+                  name="Florian Socalciuc" 
+                  role="Lider Unitate Temerari" 
+                  photoUrl="/leaders/florian-socalciuc.jpeg" 
+                  description="<p> &nbsp; Florian Socalciuc </p>
+                  
+                  <p> &nbsp; Sunt un tânăr pensionar începând cu iulie 2024, ceea ce înseamnă că dispun de o resursă importantă de timp. </p>
+                   
+                   <p> &nbsp; &nbsp; Formare profesională:
+                      &nbsp; •	Absolvent al Facultății de Drept la Universitatea Româno-Americană
+                      &nbsp; •	Absolvent al unui master de științe penale la Universitatea Titu Maiorescu
+                      &nbsp; •	Absolvent master în vinificație la USAMV
+                      &nbsp; •	Certificat acreditat de formator
+                      &nbsp; •	Certificat acreditat de somelier
+                      &nbsp; •	Certificat acreditat de mediator </p>
+                      
+                    <p> &nbsp; &nbsp; Formare cercetășească :
+                    &nbsp; 25 Septembrie 2025 – 01 Iunie 2026 Woodbadge
+                    &nbsp; 24 septembrie. 2025- 8 decembrie 2025 Stagiu Coordonator Local (MC)
+                    &nbsp; 25 oct. 2024 - 27 oct. 2024 Stagiu de Prim-Ajutor, C.L. Sfântul Nicolae, București
+                    &nbsp; 10 mai 2024 - 12 mai 2024 Stagiu de Animatie Micul print - CL Sfantul Nicolae Bucuresti
+                    &nbsp; 10 feb. 2023 - 12 feb. 2023 Stagiu de Introducere în Pedagogia Scout, București
+                    &nbsp; În activitatea mea de polițist de penitenciare de peste 20 ani, a activat în cadrul Institutului Național de Expertize Criminalistice, unde mi-am dezvoltat abilitățile de atenție distributivă, atenție la detalii și analiza comunicării non-verbale.
+                    </p>
+                    
+                    <p> 
+                    &nbsp; O perioadă de peste 10 ani am activat în cadrul Direcției de Reintegrare Socială din ANP, unde am participat activ la buna desfășurare a activităților 
+                    socio-educative în programe destinate integrării sociale, organizând piese de teatru, festivaluri de poezie, cultură și etnografie.
+                    Dețin bune abilități de comunicare dobândite în urma experienței de mediator; sunt spiritual, cu simțul umorului, calm, diplomat și un bun negociator. 
+                    Am creativitate în identificarea soluțiilor pentru o organizare eficientă privind resursele umane și materiale, precum și eficacitate privind componenta timp și 
+                    bani.
+                    Ca somelier, am la activ câteva sute de prezentări, cu un public cuprins între 10 și peste 100 de auditori, ceea ce mă face să se simt confortabil în poziția de orator.
+                    &nbsp; În activitatea cercetășească, activez începând cu anul 2o22. La început am avut reticențe, dar apoi am constatat că cercetășia a devenit al doilea serviciu. 
+                    Am o prezență la activități de peste 80%; am participat în aproximativ 20 campuri, implicându-mă ca și coorganizator la câteva dintre ele. Momentan sunt lider la 
+                    ramura Temerari, iar în cadrul centrului local Baden Powell sunt responsabil pentru suportul liderilor & voluntarilor .
+                    </p>"
+                />
+
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="text-white text-xs font-bold uppercase tracking-wider pl-1 border-l-2 border-blue-500">🏰 Exploratori (Clasele IX-XII)</h3>
+              <div class="space-y-2 pt-1">
+
+                <LeaderCard 
+                  name="Andrei Stoica" 
+                  role="Lider Unitate Exploratori" 
+                  photoUrl="/leaders/andrei-stoica.jpeg" 
+                  description="<p> &nbsp; Anii petrecuți în cariera militară i-au sculptat o disciplină de nezdruncinat, o punctualitate impecabilă și o capacitate 
+                  nativă de a organiza instantaneu haosul. Deși postura sa fermă și tonul hotărât impun respect imediat, această autoritate este una cumpătată: dincolo 
+                  de rigoarea de soldat, tinerii descoperiți un mentor dinamic, un vector de entuziasm și un fin cunoscător al limitelor pe care exploratorii trebuie 
+                  să învețe să le depășească. </p>
+                  
+                  <p> &nbsp; Pentru el, trecerea de la tactica militară la pedagogia cercetășească a fost un pas firesc. Valorile fundamentale care l-au ghidat 
+                  sub drapel – onoarea, loialitatea, spiritul de sacrificiu și respectul – sunt exact pilonii pe care își construiește acum atelierele cu tinerii exploratori. </p>
+                   
+                   <p> &nbsp; Este omul care știe să impună o disciplină de fier în tabără pentru siguranța tuturor, transformând fiecare regulă într-o lecție de viață, dar și 
+                   cel care reușește să construiască o încredere reciprocă de nezdruncinat cu fiecare explorator. Seara, în jurul focului, autoritatea lui devine un refugiu 
+                   sigur, unde tinerii știu că pot vorbi deschis și că vor fi ghidați cu fermitate și corectitudine. O punte perfectă între ordinea armatei și spiritul liber, 
+                   curajos al cercetășiei, bazat pe respect și loialitate. </p>"
+                />
+
+
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="text-white text-xs font-bold uppercase tracking-wider pl-1 border-l-2 border-purple-500">👣 Seniori (19-24 ani)</h3>
+              <div class="space-y-2 pt-1">
+                <LeaderCard 
+                  name="Savian" 
+                  scoutName="CORTEX"
+                  role="Scouter Seniori" 
+                  description="<p> &nbsp; O unitate de elită nu se naște din întâmplare, ci se construiește prin forța exemplului. Ghidat de valorile unei cariere militare, Savian 
+                  a transformat un grup de tineri într-o comunitate etalon, recunoscută pentru disciplina impecabilă și încrederea de nezdruncinat în forțele proprii.  </p>
+
+                  <p> &nbsp; Cu o energie vibrantă și o autoritate cumpătată, el a adus rigoarea tactică în pedagogia cercetășească. Pentru el, disciplina impusă în tabere 
+                  nu este o restricție, ci scutul de siguranță al tinerilor, în timp ce responsabilitățile delegate sunt instrumentul prin care le cultivă independența.
+                  A construit o echipă puternică, unde fiecare senior are curajul să ia decizii și să acționeze sub presiune. El nu a creat doar o unitate disciplinată,
+                   a format caractere puternice, pregătite pentru viață. </p>"
+                />
+              </div>
+            </div>
+
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

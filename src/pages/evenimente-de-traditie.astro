@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CampCard from '../components/CampCard.astro';
+---
+
+<Layout title="Evenimente de Tradiție | Centrul Local Baden Powell">
+  <div class="space-y-12 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Obiceiuri și Ceremoniale Scout
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">⚜️ Evenimente de Tradiție</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">Momentele solemne și ritualurile anuale care definesc identitatea și spiritul centrului nostru local.</p>
+    </div>
+
+    <div class="space-y-10 max-w-4xl mx-auto w-full">
+      <CampCard
+        campId="dac-fl2026"
+        title="Deschiderea Anului Cercetășesc - Festivalul Luminii 2026"
+        location="București - Parcul Tineretului"
+        date="Anual"
+        images={[
+          'evenimente/dacfl2026/dac1.jpeg',
+          'evenimente/dacfl2026/dac2.jpeg',
+          'evenimente/dacfl2026/dac3.jpeg',
+          'evenimente/dacfl2026/dac4.jpeg',
+          'evenimente/dacfl2026/dac5.jpeg',
+          'evenimente/dacfl2026/dac6.jpeg',
+          'evenimente/dacfl2026/dac7.jpeg',
+          'evenimente/dacfl2026/dac8.jpeg',
+          'evenimente/dacfl2026/dac9.jpeg'
+        ]}
+        description="<p> 
+        <p> <strong> &nbsp; Când promisiunea cercetășească întâlnește magia: O seară de neuitat în Parcul Tineretului </strong> </p>
+
+<p> &nbsp; Există seri în care timpul pare să curgă mai lent, iar spațiul din jur devine o pânză pe care se pictează amintiri de neprețuit. 
+O astfel de seară am trăit în Parcul Tineretului, unde comunitatea s-a adunat pentru a celebra un dublu moment de sărbătoare: Deschiderea Anului Cercetășesc și Festivalul Luminii. 
+Două evenimente mari, unite sub aceeași umbrelă a valorilor, a prieteniei și a simplității. </p>
+<br>
+<p> <strong> &nbsp; Un nou capitol, o nouă aventură </strong> </p>
+
+<p> &nbsp; Toamna aceasta nu aduce doar frunze arămii, ci și un nou început pentru cercetași. Cu eșarfele purtate cu mândrie la gât, de la cei mai mici lupișori până la seniori și lideri 
+experimentați, parcul a răsunat de zâmbete, strigăte de camp și revederi emoționante după o vară plină de tabere. Deschiderea noului an a stat sub semnul entuziasmului: planuri 
+noi, abilități de deprins și legăminte reînnoite. S-a simțit, mai mult ca oricând, acea energie unică a unei familii ghidate de curaj, loialitate și respect față de natură. </p>
+<br>
+<p> <strong> &nbsp; Parcul Tineretului, inundat de sute de „gulgute” </strong> </p>
+
+<p> &nbsp; Pe măsură ce amurgul s-a așternut peste București, magia a început să prindă contur. Aleile Parcului Tineretului au fost luminate treptat de mii de gulgute — micile cutii de hârtie 
+împăturite manual, în care pâlpâiau lumânări calde.
+Festivalul Luminii ne-a reamintit tuturor să redescoperim frumusețea lucrurilor mărunte. Într-o lume care aleargă mereu pe repede-înainte, cele câteva ore petrecute printre aleile 
+luminate au fost o oază de liniște și introspecție. Trecătorii s-au oprit din drumul lor, fascirați de labirinturile de foc, de muzica acustică ce plutea în aer și de atelierele 
+creative pregătite de tineri. </p>
+<br>
+<p> <strong> &nbsp; Lumina din fiecare dintre noi </strong> </p>
+
+<p> &nbsp; Dincolo de spectacolul vizual deosebit, evenimentul a purtat un mesaj profund terapeutic și social. Fiecare lumânare aprinsă a reprezentat o metaforă pentru bunătatea, generozitatea 
+și căldura pe care cercetașii își propun să le împrăștie în comunitate în noul an care tocmai a început. A fost un spațiu în care ecranele telefoanelor au fost înlocuite de priviri 
+calde, iar zgomotul orașului a fost acoperit de acorduri de chitară și povești împărtășite la gura „focului” de lumânări.
+Anul cercetășesc a început sub cele mai bune auspicii: cu o comunitate unită, cu inimi pline de speranță și cu promisiunea că, indiferent cât de întunecată poate părea uneori lumea, 
+fiecare dintre noi are puterea de a aprinde o mică lumină. </p> </p>"
+/>
+</div>
+
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

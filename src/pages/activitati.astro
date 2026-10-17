@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CampCard from '../components/CampCard.astro';
+---
+
+<Layout title="Activități | Centrul Local Baden Powell">
+  <div class="space-y-12 relative z-10 w-full">
+    <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
+        Programul Săptămânal
+      </span>
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">⚜️ Activitățile Noastre</h1>
+      <p class="text-stone-300 mt-2 text-sm md:text-base">
+        Programele curente desfășurate pe patrule și ramuri de vârstă în natură sau la sediu.
+      </p>
+    </div>
+
+    <div class="space-y-10 max-w-4xl mx-auto w-full">
+      <CampCard
+        campId="intalniri-saptamanale"
+        title="Întâlnirile de Patrulă și Atelierele de Sâmbătă"
+        location="București"
+        date="Săptămânal"
+        images={[
+          'activitati/activitati1.jpg',
+          'activitati/activitati2.jpg',
+          'activitati/activitati3.jpg',
+          'activitati/activitati4.jpg',
+          'activitati/activitati5.jpg',
+          'activitati/activitati6.jpg',
+          'activitati/activitati7.jpg',
+          'activitati/activitati8.jpg',
+          'activitati/activitati9.jpg',
+        ]}
+        description="<p>Activitățile noastre săptămânale reprezintă nucleul metodei scout. În fiecare sâmbătă, cercetașii se adună pe ramuri de vârstă pentru a învăța prin acțiune directă, experimentând tehnici de orientare, noduri aplicate, prim ajutor și ecologie urbană. În plus, fiecare întâlnire este o incursiune în istoria și valorile mișcării, reconectându-i pe tineri cu tradițiile românești și cu patrimoniul cultural local prin explorări urbane, povești de demult și redescoperirea identității naționale.</p><p>Prin intermediul jocurilor tactice, al tradițiilor cercetășești transmise din generație în generație și al proiectelor de echipă, copiii și tinerii își dezvoltă spiritul de inițiativă, încrederea în sine și capacitatea de a colabora strâns în cadrul patrulei autonome, pregătindu-se activ pentru marile expediții din taberele de vară.</p>"
+      />
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-color: #1a1917 !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "" !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background-image: url('/about-scarf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

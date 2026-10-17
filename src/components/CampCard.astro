@@ -1,0 +1,96 @@
+---
+interface Props {
+  title: string;
+  location: string;
+  date: string;
+  description: string; // Accepts HTML paragraphs <p>...</p>
+  images: string[];    // Array of image paths, e.g., ['/camps/camp1-1.jpg', '/camps/camp1-2.jpg']
+  campId: string;      // A unique string identifier, e.g., "babadag2024"
+}
+
+const { title, location, date, description, images, campId } = Astro.props;
+---
+
+<div class="bg-stone-900/75 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col gap-6 text-stone-100">
+  <div class="border-b border-white/5 pb-3">
+    <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-stone-400 mb-1">
+      <span class="font-mono uppercase tracking-wider text-amber-400 font-bold">⛺ Jurnal de Camp</span>
+      <span class="font-mono">{date} • {location}</span>
+    </div>
+    <h2 class="text-xl md:text-2xl font-extrabold text-white tracking-tight">{title}</h2>
+  </div>
+
+  {images && images.length > 0 && (
+    <div class="relative w-full aspect-video rounded-xl border border-white/10 bg-stone-950 overflow-hidden group/carousel select-none" id={`carousel-${campId}`}>
+      <div class="w-full h-full relative dynamic-slider-track">
+        {images.map((imgUrl, idx) => (
+          <img
+            src={imgUrl}
+            alt={`${title} - Foto ${idx + 1}`}
+            class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            data-index={idx}
+          />
+        ))}
+      </div>
+
+      {images.length > 1 && (
+        <>
+          <button class="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white font-bold w-9 h-9 rounded-full flex items-center justify-center transition-opacity opacity-0 group-hover/carousel:opacity-100 pointer-events-auto cursor-pointer shadow-md prev-btn" aria-label="Anterioară">
+            ‹
+          </button>
+          <button class="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white font-bold w-9 h-9 rounded-full flex items-center justify-center transition-opacity opacity-0 group-hover/carousel:opacity-100 pointer-events-auto cursor-pointer shadow-md next-btn" aria-label="Următoare">
+            ›
+          </button>
+
+          <div class="absolute bottom-3 left-1/2 -translate-y-0 z-20 flex gap-1.5 -translate-x-1/2 bg-black/30 backdrop-blur-xs px-2.5 py-1 rounded-full indicator-container">
+            {images.map((_, idx) => (
+              <span class={`w-2 h-2 rounded-full transition-colors duration-300 ${idx === 0 ? 'bg-amber-400' : 'bg-white/40'}`} data-dot={idx}></span>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  )}
+
+  <div class="w-full text-justify [&>p]:indent-8 space-y-3 text-sm sm:text-base leading-relaxed text-stone-200">
+    <div set:html={description} />
+  </div>
+</div>
+
+<script define:vars={{ campId, totalImages: images.length }}>
+  (() => {
+    if (totalImages <= 1) return;
+    
+    const container = document.getElementById(`carousel-${campId}`);
+    if (!container) return;
+
+    const imagesEl = container.querySelectorAll('.dynamic-slider-track img');
+    const dotsEl = container.querySelectorAll('.indicator-container span');
+    const prevBtn = container.querySelector('.prev-btn');
+    const nextBtn = container.querySelector('.next-btn');
+    
+    let currentIdx = 0;
+
+    function changeSlide(nextIdx) {
+      // Hide old image
+      imagesEl[currentIdx].classList.remove('opacity-100', 'z-10');
+      imagesEl[currentIdx].classList.add('opacity-0', 'z-0');
+      dotsEl[currentIdx].classList.remove('bg-amber-400');
+      dotsEl[currentIdx].classList.add('bg-white/40');
+
+      // Update index boundary limits
+      currentIdx = (nextIdx + totalImages) % totalImages;
+
+      // Reveal new image
+      imagesEl[currentIdx].classList.remove('opacity-0', 'z-0');
+      imagesEl[currentIdx].classList.add('opacity-100', 'z-10');
+      dotsEl[currentIdx].classList.remove('bg-white/40');
+      dotsEl[currentIdx].classList.add('bg-amber-400');
+    }
+
+    if (nextBtn && prevBtn) {
+      nextBtn.addEventListener('click', () => changeSlide(currentIdx + 1));
+      prevBtn.addEventListener('click', () => changeSlide(currentIdx - 1));
+    }
+  })();
+</script>

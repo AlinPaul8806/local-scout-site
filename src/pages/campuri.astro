@@ -7,7 +7,7 @@ import CampCard from '../components/CampCard.astro';
   <div class="space-y-12 relative z-10 w-full">
     <div class="border-b border-white/10 pb-4 mb-6 text-center md:text-left">
       <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30 shadow-xs">
-        Memoria Corturilor Noastre
+        Memoria Campurilor Noastre
       </span>
       <h1 class="text-3xl font-extrabold text-white tracking-tight mt-3 drop-shadow-md">🏕️ Cronica Taberelor Trecute</h1>
       <p class="text-stone-300 mt-2 text-sm md:text-base">File de jurnal, amintiri și provocări depășite în mijlocul naturii de-a lungul anilor.</p>
@@ -68,5 +68,14 @@ import CampCard from '../components/CampCard.astro';
     pointer-events: none;
     z-index: -1;
     opacity: 0.7;
+  }
+
+  @media (max-width: 640px) {
+    body::after {
+      opacity: 0.25;
+      width: 80vw;
+      height: 80vw;
+      max-height: 80vw;
+    }
   }
 </style>

@@ -21,7 +21,7 @@ const { title } = Astro.props;
 		<nav class="bg-[#124d37] text-white shadow-md sticky top-0 z-50 transition-all duration-300 border-b-4 border-scout-gold">
 			<div class="max-w-6xl mx-auto px-4">
 				<div class="flex items-center justify-between gap-4 py-0 w-full overflow-hidden">
-					<div class="flex-shrink-0 w-16 h-16 sm:w-25 sm:h-25 flex items-center justify-center">
+					<div class="hidden sm:flex flex-shrink-0 sm:w-25 sm:h-25 items-center justify-center">
 						<img
 							src="/scout-watermark.png"
 							alt="Organizația Națională Cercetașii României Emblemă"
@@ -31,30 +31,42 @@ const { title } = Astro.props;
 					</div>
 
 					<div class="flex-grow flex flex-col items-center text-center leading-tight px-2 min-w-0">
-						<span class="text-sm sm:text-base md:text-lg font-extrabold uppercase tracking-wider text-white">
+						<span class="text-xs sm:text-base md:text-lg font-extrabold uppercase tracking-normal sm:tracking-wider text-white">
 							Organizația Națională CERCETAȘII ROMÂNIEI
 						</span>
-						<span class="text-xs sm:text-sm font-semibold text-white/80 tracking-wide mt-0.5 sm:mt-1">
+						<span class="hidden sm:block text-xs sm:text-sm font-semibold text-white/80 tracking-wide mt-0.5 sm:mt-1">
 							Centrul Local Baden-Powell București
 						</span>
 					</div>
 
-					<a href="/" class="flex-shrink-0 w-14 h-14 sm:w-20 sm:h-20 flex items-center justify-center group" aria-label="Acasă">
-						<img
-							src="/logobp.png"
-							alt="Logo Baden Powell"
-							class="max-w-full max-h-full object-contain bg-white/10 rounded-full p-1 group-hover:bg-white/20 transition-all block"
-						/>
-					</a>
+					<div class="flex-shrink-0 flex items-center gap-2">
+						<a href="/" class="w-10 h-10 sm:w-20 sm:h-20 flex items-center justify-center group" aria-label="Acasă">
+							<img
+								src="/logobp.png"
+								alt="Logo Baden Powell"
+								class="max-w-full max-h-full object-contain bg-white/10 rounded-full p-1 group-hover:bg-white/20 transition-all block"
+							/>
+						</a>
+						<button
+							id="mobile-menu-btn"
+							class="sm:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 transition-colors gap-1.5 shrink-0"
+							aria-label="Deschide meniu"
+							aria-expanded="false"
+						>
+							<span id="ham-line1" class="block w-5 h-0.5 bg-white rounded-full transition-all duration-300 origin-center"></span>
+							<span id="ham-line2" class="block w-5 h-0.5 bg-white rounded-full transition-all duration-300"></span>
+							<span id="ham-line3" class="block w-5 h-0.5 bg-white rounded-full transition-all duration-300 origin-center"></span>
+						</button>
+					</div>
 				</div>
 
 				<div class="w-full h-px bg-white/10 p-0 m-0"></div>
 
-				<div class="flex flex-col sm:flex-row gap-4 pt-2 pb-3 items-center justify-between text-sm font-medium">
+				<div class="hidden sm:flex flex-row gap-4 pt-2 pb-3 items-center justify-between text-sm font-medium">
 					<div class="flex flex-wrap items-center justify-center gap-4 md:gap-8">
-						<a href="/" class="hover:text-amber-400 transition-colors py-1">Acasă</a>
+						<a href="/" class="hover:text-amber-400 transition-colors py-2">Acasă</a>
 
-						<div class="relative group py-1 cursor-pointer">
+						<div class="relative group py-2 cursor-pointer">
 							<a href="/cine-suntem" class="hover:text-amber-400 transition-colors flex items-center gap-1">
 								Cine suntem
 								<svg xmlns="http://w3.org" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
@@ -65,7 +77,7 @@ const { title } = Astro.props;
 							</div>
 						</div>
 
-						<div class="relative group py-1 cursor-pointer">
+						<div class="relative group py-2 cursor-pointer">
 							<span class="hover:text-amber-400 transition-colors flex items-center gap-1 text-white">
 								Campuri & Activități
 								<svg xmlns="http://w3.org" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
@@ -77,11 +89,11 @@ const { title } = Astro.props;
 							</div>
 						</div>
 
-						<a href="/parteneri" class="hover:text-amber-400 transition-colors py-1">Sponsori & Parteneri</a>
+						<a href="/parteneri" class="hover:text-amber-400 transition-colors py-2">Sponsori & Parteneri</a>
 					</div>
 
 					<div class="flex items-center gap-4 flex-wrap justify-center">
-						<a href="/contact" class="hover:text-amber-400 transition-colors font-semibold border border-white/20 hover:border-amber-400/40 px-4 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-all text-xs uppercase tracking-wider">
+						<a href="/contact" class="hover:text-amber-400 transition-colors font-semibold border border-white/20 hover:border-amber-400/40 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all text-xs uppercase tracking-wider">
 							Contact & Sponsorizări
 						</a>
 
@@ -107,6 +119,52 @@ const { title } = Astro.props;
 							</a>
 						</div>
 					</div>
+				</div>
+
+				<!-- Mobile navigation drawer -->
+				<div id="mobile-menu" class="hidden border-t border-white/10">
+					<nav class="py-2 space-y-0.5 text-sm font-medium" aria-label="Meniu mobil">
+						<a href="/" class="flex items-center px-4 py-3 hover:bg-white/10 rounded-lg transition-colors">Acasă</a>
+
+						<details class="group/mdrop1">
+							<summary class="flex items-center justify-between px-4 py-3 hover:bg-white/10 rounded-lg cursor-pointer list-none select-none">
+								<span class="flex-1">Cine suntem</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-stone-300 transition-transform duration-200 group-open/mdrop1:rotate-180 shrink-0 ml-2"><path d="m6 9 6 6 6-6"/></svg>
+							</summary>
+							<div class="pl-6 pb-1 space-y-0.5">
+								<a href="/cine-suntem" class="flex items-center px-4 py-2.5 text-stone-200 hover:text-amber-400 hover:bg-white/5 rounded-lg transition-colors">Prezentare generală</a>
+								<a href="/echipa" class="flex items-center px-4 py-2.5 text-stone-200 hover:text-amber-400 hover:bg-white/5 rounded-lg transition-colors">Echipa</a>
+								<a href="/inceputuri" class="flex items-center px-4 py-2.5 text-stone-200 hover:text-amber-400 hover:bg-white/5 rounded-lg transition-colors">Inceputuri</a>
+							</div>
+						</details>
+
+						<details class="group/mdrop2">
+							<summary class="flex items-center justify-between px-4 py-3 hover:bg-white/10 rounded-lg cursor-pointer list-none select-none">
+								<span class="flex-1">Campuri & Activități</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-stone-300 transition-transform duration-200 group-open/mdrop2:rotate-180 shrink-0 ml-2"><path d="m6 9 6 6 6-6"/></svg>
+							</summary>
+							<div class="pl-6 pb-1 space-y-0.5">
+								<a href="/campuri" class="flex items-center px-4 py-2.5 text-stone-200 hover:text-amber-400 hover:bg-white/5 rounded-lg transition-colors">Campuri</a>
+								<a href="/activitati" class="flex items-center px-4 py-2.5 text-stone-200 hover:text-amber-400 hover:bg-white/5 rounded-lg transition-colors">Activități</a>
+								<a href="/evenimente-de-traditie" class="flex items-center px-4 py-2.5 text-stone-200 hover:text-amber-400 hover:bg-white/5 rounded-lg transition-colors">Evenimente de tradiție</a>
+							</div>
+						</details>
+
+						<a href="/parteneri" class="flex items-center px-4 py-3 hover:bg-white/10 rounded-lg transition-colors">Sponsori & Parteneri</a>
+						<a href="/contact" class="flex items-center px-4 py-3 hover:bg-white/10 rounded-lg transition-colors font-semibold text-amber-300">Contact & Sponsorizări</a>
+
+						<div class="flex items-center gap-5 px-4 py-3 mt-1 border-t border-white/10">
+							<a href="https://www.facebook.com/clbadenpowell.oncr" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors p-1" aria-label="Facebook Pagina Oficială">
+								<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+							</a>
+							<a href="https://www.instagram.com/centrul_local_baden_powell?mdxt=aTZtaHVyNTJmY2w4" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors p-1" aria-label="Instagram Pagina Oficială">
+								<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+							</a>
+							<a href="https://www.tiktok.com/@centrulocal_badenpowell?_r=1&_t=ZN-9AdmPdI29Mk" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors p-1" aria-label="TikTok Pagina Oficială">
+								<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+							</a>
+						</div>
+					</nav>
 				</div>
 			</div>
 		</nav>
@@ -139,5 +197,31 @@ const { title } = Astro.props;
 
 			</div>
 		</footer>
+
+		<script>
+			const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+			const mobileMenu = document.getElementById('mobile-menu');
+			const l1 = document.getElementById('ham-line1');
+			const l2 = document.getElementById('ham-line2');
+			const l3 = document.getElementById('ham-line3');
+
+			if (mobileMenuBtn && mobileMenu) {
+				mobileMenuBtn.addEventListener('click', () => {
+					const isOpen = !mobileMenu.classList.contains('hidden');
+					mobileMenu.classList.toggle('hidden', isOpen);
+					mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
+
+					if (!isOpen) {
+						l1?.classList.add('rotate-45', 'translate-y-2');
+						l2?.classList.add('opacity-0', 'scale-x-0');
+						l3?.classList.add('-rotate-45', '-translate-y-2');
+					} else {
+						l1?.classList.remove('rotate-45', 'translate-y-2');
+						l2?.classList.remove('opacity-0', 'scale-x-0');
+						l3?.classList.remove('-rotate-45', '-translate-y-2');
+					}
+				});
+			}
+		</script>
 	</body>
 </html>

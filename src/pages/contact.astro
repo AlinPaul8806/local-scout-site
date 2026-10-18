@@ -107,7 +107,7 @@ import Layout from '../layouts/Layout.astro';
                 📱
               </div>
               <div>
-                <span class="text-stone-400 block uppercase font-mono tracking-wider text-[9px]">Telefon Centru</span>
+                <span class="text-stone-400 block uppercase font-mono tracking-wider text-xs">Telefon Centru</span>
                 <a href="tel:+40 765 119 343" class="font-bold text-stone-100 hover:text-amber-400 transition-colors text-sm font-mono">+40 765 119 343</a>
               </div>
             </div>
@@ -117,7 +117,7 @@ import Layout from '../layouts/Layout.astro';
                 📧
               </div>
               <div>
-                <span class="text-stone-400 block uppercase font-mono tracking-wider text-[9px]">Adresă Email</span>
+                <span class="text-stone-400 block uppercase font-mono tracking-wider text-xs">Adresă Email</span>
                 <a href="mailto:bucuresti@cercetasii.ro" class="font-bold text-stone-100 hover:text-amber-400 transition-colors text-sm font-mono break-all">cl_badenpowell@yahoo.com</a>
               </div>
             </div>
@@ -130,23 +130,23 @@ import Layout from '../layouts/Layout.astro';
 
           <div class="space-y-3 pt-2 text-xs border-t border-white/10">
             <div>
-              <span class="text-stone-400 block uppercase font-mono tracking-wider text-[10px]">Entitate Oficială</span>
+              <span class="text-stone-400 block uppercase font-mono tracking-wider text-xs">Entitate Oficială</span>
               <span class="font-semibold text-stone-100">Organizația Națională "Cercetașii României" - Centrul Local Baden Powell</span>
             </div>
             <div>
-              <span class="text-stone-400 block uppercase font-mono tracking-wider text-[10px]">Cod Fiscal (CUI)</span>
+              <span class="text-stone-400 block uppercase font-mono tracking-wider text-xs">Cod Fiscal (CUI)</span>
               <span class="font-mono font-semibold text-stone-100">54686537</span>
             </div>
             <div>
-              <span class="text-stone-400 block uppercase font-mono tracking-wider text-[10px]">Cont Bancar (IBAN)</span>
+              <span class="text-stone-400 block uppercase font-mono tracking-wider text-xs">Cont Bancar (IBAN)</span>
 
               <button
                 id="copy-iban-btn"
                 class="w-full flex items-center justify-between bg-stone-950/60 p-3 rounded mt-1 font-mono text-amber-300 border border-stone-800 hover:border-amber-400/50 hover:bg-stone-950 text-left transition-all group relative cursor-pointer"
                 title="Apasă pentru a copia codul IBAN"
               >
-                <span id="iban-text" class="text-[11px] font-bold tracking-tight">RO47BTRLRONCRT0DG0045601</span>
-                <span id="copy-status-badge" class="bg-stone-900 text-stone-300 rounded px-2 py-1 text-[9px] font-bold uppercase tracking-wider">Copiază</span>
+                <span id="iban-text" class="text-xs font-bold tracking-tight">RO47BTRLRONCRT0DG0045601</span>
+                <span id="copy-status-badge" class="bg-stone-900 text-stone-300 rounded px-2 py-1 text-xs font-bold uppercase tracking-wider">Copiază</span>
               </button>
             </div>
           </div>
@@ -157,7 +157,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-stone-200 text-xs leading-relaxed">
             Dacă ești salariat, poți direcționa gratuit 3.5% din impozitul pe venit completând Formularul 230 în beneficiul centrului nostru local, sprijinind materialele de tabără ale copiilor.
           </p>
-          <a href="#" onclick="alert('Descărcare formular precompletat 230...'); return false;" class="inline-block text-[10px] font-bold text-amber-900 border border-amber-900/20 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all shadow-sm">
+          <a href="#" onclick="alert('Descărcare formular precompletat 230...'); return false;" class="inline-block text-xs font-bold text-amber-900 border border-amber-900/20 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all shadow-sm">
             Descarcă Formularul 230 PDF ↓
           </a>
         </div>
@@ -199,6 +199,15 @@ import Layout from '../layouts/Layout.astro';
     pointer-events: none;
     z-index: -1;
     opacity: 0.7;
+  }
+
+  @media (max-width: 640px) {
+    body::after {
+      opacity: 0.25;
+      width: 80vw;
+      height: 80vw;
+      max-height: 80vw;
+    }
   }
 </style>
 
@@ -242,7 +251,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-stone-200 text-xs leading-relaxed">
             Dacă ești salariat, poți direcționa gratuit 3.5% din impozitul pe venit completând Formularul 230 în beneficiul centrului nostru local, sprijinind materialele de tabără ale copiilor.
           </p>
-          <a href="#" onclick="alert('Descărcare formular precompletat 230...'); return false;" class="inline-block text-[10px] font-bold text-amber-900 border border-amber-900/20 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all shadow-sm">
+          <a href="#" onclick="alert('Descărcare formular precompletat 230...'); return false;" class="inline-block text-xs font-bold text-amber-900 border border-amber-900/20 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all shadow-sm">
             Descarcă Formularul 230 PDF ↓
           </a>
         </div>

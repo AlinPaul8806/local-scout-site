@@ -35,10 +35,10 @@ const { title, location, date, description, images, campId } = Astro.props;
 
       {images.length > 1 && (
         <>
-          <button class="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white font-bold w-9 h-9 rounded-full flex items-center justify-center transition-opacity opacity-0 group-hover/carousel:opacity-100 pointer-events-auto cursor-pointer shadow-md prev-btn" aria-label="Anterioară">
+          <button class="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white font-bold w-9 h-9 rounded-full flex items-center justify-center transition-opacity sm:opacity-0 sm:group-hover/carousel:opacity-100 pointer-events-auto cursor-pointer shadow-md prev-btn" aria-label="Anterioară">
             ‹
           </button>
-          <button class="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white font-bold w-9 h-9 rounded-full flex items-center justify-center transition-opacity opacity-0 group-hover/carousel:opacity-100 pointer-events-auto cursor-pointer shadow-md next-btn" aria-label="Următoare">
+          <button class="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white font-bold w-9 h-9 rounded-full flex items-center justify-center transition-opacity sm:opacity-0 sm:group-hover/carousel:opacity-100 pointer-events-auto cursor-pointer shadow-md next-btn" aria-label="Următoare">
             ›
           </button>
 
@@ -52,7 +52,7 @@ const { title, location, date, description, images, campId } = Astro.props;
     </div>
   )}
 
-  <div class="w-full text-justify [&>p]:indent-8 space-y-3 text-sm sm:text-base leading-relaxed text-stone-200">
+  <div class="w-full text-left sm:text-justify [&>p]:indent-8 space-y-3 text-sm sm:text-base leading-relaxed text-stone-200">
     <div set:html={description} />
   </div>
 </div>
@@ -92,5 +92,16 @@ const { title, location, date, description, images, campId } = Astro.props;
       nextBtn.addEventListener('click', () => changeSlide(currentIdx + 1));
       prevBtn.addEventListener('click', () => changeSlide(currentIdx - 1));
     }
+
+    let touchStartX = 0;
+    container.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    container.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) {
+        changeSlide(currentIdx + (diff > 0 ? 1 : -1));
+      }
+    }, { passive: true });
   })();
 </script>

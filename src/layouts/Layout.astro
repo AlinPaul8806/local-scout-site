@@ -181,8 +181,12 @@ const { title } = Astro.props;
 				</div>
 
 				<div class="text-xs text-white/60 pt-2 border-t border-white/10 max-w-xs mx-auto">
-					<p class="flex items-center justify-center gap-1.5">
-						Made with ❤️ by
+					<p class="flex items-center justify-center gap-1.5 flex-wrap">
+						<a href="/politica-cookies" class="text-scout-gold hover:text-white font-medium underline underline-offset-4 decoration-scout-gold/30 hover:decoration-white transition-colors duration-200">
+							Politica de cookies
+						</a>
+						<span>•</span>
+						<span>Made with ❤️ by</span>
 						<a
 							href="https://www.linkedin.com/in/alin-paul-popa-b4272258/?locale=en"
 							target="_blank"
@@ -197,6 +201,31 @@ const { title } = Astro.props;
 
 			</div>
 		</footer>
+
+		<div id="cookie-banner" class="fixed inset-x-0 bottom-0 z-[60] hidden">
+			<div class="mx-auto max-w-6xl px-3 pb-3 sm:px-4 sm:pb-4">
+				<div class="rounded-t-2xl border border-stone-200/60 bg-[#1d2d27]/95 p-4 text-white shadow-2xl backdrop-blur-md md:rounded-2xl">
+					<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+						<div class="max-w-2xl text-sm md:text-base leading-relaxed text-stone-100">
+							<p>
+								Pe acest site folosim cookie-uri necesare pentru funcționarea de bază și, dacă îți dai consimțământul, și cookie-uri pentru statistici și îmbunătățirea experienței.
+							</p>
+						</div>
+						<div class="flex flex-col gap-2 sm:flex-row">
+							<button id="cookie-accept" class="rounded-lg bg-[#f4a261] px-4 py-3 text-sm font-bold text-stone-900 transition hover:bg-[#e69a4d]">
+								Accept toate
+							</button>
+							<button id="cookie-reject" class="rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10">
+								Doar necesare
+							</button>
+							<a href="/politica-cookies" class="rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-center text-sm font-medium text-white transition hover:bg-white/10">
+								Detalii
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<script>
 			const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -222,6 +251,46 @@ const { title } = Astro.props;
 					}
 				});
 			}
+
+			const cookieBanner = document.getElementById('cookie-banner');
+			const cookieAcceptBtn = document.getElementById('cookie-accept');
+			const cookieRejectBtn = document.getElementById('cookie-reject');
+			const COOKIE_KEY = 'site-cookie-consent';
+
+			function hideCookieBanner() {
+				cookieBanner?.classList.add('hidden');
+			}
+
+			function saveCookieChoice(choice) {
+				const payload = {
+					choice,
+					updatedAt: new Date().toISOString(),
+					essential: true,
+					analytics: choice === 'accepted'
+				};
+
+				try {
+					localStorage.setItem(COOKIE_KEY, JSON.stringify(payload));
+				} catch (error) {
+					console.warn('Nu s-a putut salva preferința cookie-urilor:', error);
+				}
+				hideCookieBanner();
+			}
+
+			const existingChoice = (() => {
+				try {
+					return localStorage.getItem(COOKIE_KEY);
+				} catch {
+					return null;
+				}
+			})();
+
+			if (!existingChoice && cookieBanner) {
+				cookieBanner.classList.remove('hidden');
+			}
+
+			cookieAcceptBtn?.addEventListener('click', () => saveCookieChoice('accepted'));
+			cookieRejectBtn?.addEventListener('click', () => saveCookieChoice('rejected'));
 		</script>
 	</body>
 </html>

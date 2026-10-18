@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Politica de cookies | Centrul Local Baden Powell">
+  <section class="mx-auto max-w-4xl rounded-3xl border border-white/50 bg-white/45 p-6 shadow-xs backdrop-blur-md md:p-8">
+    <span class="inline-flex rounded-full border border-emerald-200 bg-emerald-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-emerald-800">
+      Politica de cookies
+    </span>
+
+    <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-stone-900 md:text-4xl">
+      Despre cookie-uri și confidențialitate
+    </h1>
+
+    <div class="mt-6 space-y-5 text-sm leading-relaxed text-stone-800 md:text-base">
+      <p>
+        Acest site folosește cookie-uri pentru a îmbunătăți experiența de navigare, a menține funcționalitatea de bază și, dacă îți dai consimțământul,
+        pentru a înțelege cum este folosit site-ul și pentru a îmbunătăți conținutul și performanța acestuia.
+      </p>
+
+      <div class="space-y-3">
+        <h2 class="text-lg font-extrabold text-stone-900">Tipuri de cookie-uri</h2>
+        <ul class="list-disc space-y-2 pl-5">
+          <li><strong>Necesare:</strong> esențiale pentru funcționarea site-ului, cum ar fi securitatea, navigarea și accesul la paginile principale.</li>
+          <li><strong>Funcționale:</strong> rețin preferințele tale de limbă și alte setări vizuale.</li>
+          <li><strong>Statistice:</strong> ne ajută să înțelegem cum interacționezi cu site-ul, dar doar dacă îți dai consimțământul.</li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="text-lg font-extrabold text-stone-900">Cum îți poți gestiona preferințele</h2>
+        <p>
+          Poți accepta toate cookie-urile, poți alege doar cookie-urile necesare sau poți schimba decizia în orice moment din această pagină.
+          Dacă nu ai ales încă o preferință, bannerul de cookie-uri va apărea din nou la următoarea vizită.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="text-lg font-extrabold text-stone-900">Datele tale</h2>
+        <p>
+          Cookie-urile nu sunt folosite pentru a identifica persoanele în mod direct. Ele stochează doar informații necesare pentru funcționare,
+          preferințe și statistici aggregate, în conformitate cu principiile de confidențialitate aplicabile.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-stone-200 bg-stone-50 p-5 shadow-sm">
+      <h2 class="text-xl font-extrabold text-stone-900">Preferințele mele</h2>
+      <p id="cookie-status" class="mt-2 text-sm text-stone-700">
+        Nu ai ales încă o preferință pentru cookie-uri.
+      </p>
+
+      <div class="mt-4 flex flex-col gap-3 sm:flex-row">
+        <button id="cookie-page-accept" class="rounded-lg bg-[#124d37] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#0d3828]">
+          Accept toate
+        </button>
+        <button id="cookie-page-reject" class="rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm font-semibold text-stone-800 transition hover:bg-stone-100">
+          Doar necesare
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const COOKIE_KEY = 'site-cookie-consent';
+    const statusEl = document.getElementById('cookie-status');
+    const acceptBtn = document.getElementById('cookie-page-accept');
+    const rejectBtn = document.getElementById('cookie-page-reject');
+
+    function updateStatus(choice) {
+      if (!statusEl) return;
+
+      if (choice === 'accepted') {
+        statusEl.textContent = 'Ai acceptat toate cookie-urile.';
+        return;
+      }
+
+      if (choice === 'rejected') {
+        statusEl.textContent = 'Ai ales doar cookie-urile necesare.';
+        return;
+      }
+
+      statusEl.textContent = 'Nu ai ales încă o preferință pentru cookie-uri.';
+    }
+
+    function saveChoice(choice) {
+      const payload = {
+        choice,
+        updatedAt: new Date().toISOString(),
+        essential: true,
+        analytics: choice === 'accepted'
+      };
+
+      try {
+        localStorage.setItem(COOKIE_KEY, JSON.stringify(payload));
+      } catch (error) {
+        console.warn('Nu s-a putut salva preferința cookie-urilor:', error);
+      }
+
+      updateStatus(choice);
+    }
+
+    const rawChoice = (() => {
+      try {
+        return localStorage.getItem(COOKIE_KEY);
+      } catch {
+        return null;
+      }
+    })();
+
+    if (rawChoice) {
+      try {
+        const parsed = JSON.parse(rawChoice);
+        updateStatus(parsed.choice || 'not-set');
+      } catch {
+        updateStatus('not-set');
+      }
+    }
+
+    acceptBtn?.addEventListener('click', () => saveChoice('accepted'));
+    rejectBtn?.addEventListener('click', () => saveChoice('rejected'));
+  </script>
+</Layout>
